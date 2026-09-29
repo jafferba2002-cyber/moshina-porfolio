@@ -29,6 +29,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
                     <a href="#resume" class="resume-btn">Resume ▾</a>
                     <div class="dropdown-menu glass">
@@ -113,6 +114,35 @@
                 <strong>Marital Status:</strong> <span>Married</span>
                 <strong>Languages Known:</strong> <span>English, Tamil</span>
             </div>
+        </div>
+
+        <div id="contact" class="section glass reveal">
+            <h2>Contact Me</h2>
+            <form class="contact-form" id="contact-form" action="https://api.formplume.com/f/4bde607d65032b6fcefc4067" method="POST" novalidate>
+                <div class="field-row">
+                    <label for="cf-name">Name</label>
+                    <input type="text" id="cf-name" name="name" autocomplete="name" required placeholder="Your name">
+                    <small class="field-error" id="err-name" role="alert"></small>
+                </div>
+                <div class="field-row">
+                    <label for="cf-phone">Contact number</label>
+                    <input type="tel" id="cf-phone" name="phone" autocomplete="tel" inputmode="tel" required placeholder="e.g. 9876543210">
+                    <small class="field-error" id="err-phone" role="alert"></small>
+                </div>
+                <div class="field-row">
+                    <label for="cf-email">Email</label>
+                    <input type="email" id="cf-email" name="email" autocomplete="email" required placeholder="you@gmail.com">
+                    <small class="field-error" id="err-email" role="alert"></small>
+                    <small class="hint">Accepted: Gmail, Outlook, Proton Mail, Zoho Mail, iCloud Mail, jaffersadiq.com, webzio.xyz</small>
+                </div>
+                <div class="field-row">
+                    <label for="cf-message">Message</label>
+                    <textarea id="cf-message" name="message" rows="5" required placeholder="Write your message..."></textarea>
+                    <small class="field-error" id="err-message" role="alert"></small>
+                </div>
+                <button type="submit" class="submit-btn">Send message</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
         </div>
 
     </div>

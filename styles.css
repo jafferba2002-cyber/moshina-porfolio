@@ -614,3 +614,73 @@ footer a { color: var(--accent-ink); font-weight: 700; text-decoration: none; }
 @media (max-width: 768px) {
     .nav-tools { flex-wrap: wrap; justify-content: center; }
 }
+
+/* ---------- Contact form ---------- */
+.contact-form { display: grid; gap: 18px; max-width: 640px; }
+.field-row { display: grid; gap: 6px; }
+
+.field-row label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-ink);
+}
+
+.field-row input,
+.field-row textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: var(--r-md);
+    background: var(--glass);
+    color: var(--ink);
+    font: inherit;
+    box-shadow: inset 0 1px 0 var(--glass-lo), inset 0 0 0 1px var(--glass-edge);
+    transition: box-shadow 0.2s, background-color 0.2s;
+}
+
+.field-row textarea { resize: vertical; min-height: 130px; }
+.field-row input::placeholder,
+.field-row textarea::placeholder { color: var(--ink-3); }
+
+.field-row input:focus,
+.field-row textarea:focus {
+    outline: none;
+    background: var(--glass-2);
+    box-shadow: inset 0 0 0 2px var(--amber);
+}
+
+.field-row .invalid,
+.field-row input[aria-invalid="true"],
+.field-row textarea[aria-invalid="true"] { box-shadow: inset 0 0 0 2px #e5533d; }
+
+.hint { font-size: 0.82rem; color: var(--ink-3); }
+
+.submit-btn {
+    justify-self: start;
+    height: 50px;
+    padding: 0 1.8em;
+    border: 0;
+    border-radius: var(--r-pill);
+    font: 700 1rem/1 var(--f-body);
+    color: var(--on-amber);
+    cursor: pointer;
+    background: linear-gradient(180deg, var(--amber-hi) 0%, var(--amber) 48%, var(--amber-deep) 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -3px 8px -2px rgba(150, 64, 0, 0.45),
+        0 12px 28px -12px var(--amber-deep);
+    transition: transform 0.45s var(--ease-liquid), filter 0.3s;
+}
+
+.submit-btn:hover { transform: translateY(-1px) scale(1.03); filter: brightness(1.05); }
+.submit-btn:active { transform: scale(0.96); }
+.submit-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+
+.form-status { margin: 0; min-height: 1.5em; font-weight: 600; }
+.form-status.ok { color: #12945d; }
+.form-status.err { color: #e5533d; }
+
+.field-error { display: none; font-size: 0.85rem; font-weight: 600; color: #e5533d; }
+.field-error.show { display: block; }
