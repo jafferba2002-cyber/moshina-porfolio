@@ -21,9 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var root = document.documentElement;
     var btn = document.getElementById('theme-toggle');
     if (!btn) return;
-    var mqDark = window.matchMedia('(prefers-color-scheme: dark)');
     var current = function () {
-        return root.getAttribute('data-theme') || (mqDark.matches ? 'dark' : 'light');
+        return root.getAttribute('data-theme') || 'dark';
     };
     var sync = function () {
         var dark = current() === 'dark';
@@ -37,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
         try { localStorage.setItem('mp-theme', next); } catch (e) {}
         sync();
     });
-    if (mqDark.addEventListener) mqDark.addEventListener('change', sync);
     sync();
 })();
 

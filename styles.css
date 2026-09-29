@@ -56,8 +56,8 @@
     --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* Night shift · follows the system until the visitor chooses */
-@media (prefers-color-scheme: dark) {
+/* Night shift · default theme; light only when the visitor picks it */
+@media all {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
       --bg: #050c13;
